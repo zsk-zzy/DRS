@@ -244,23 +244,6 @@ At inference time, DRS performs one shared encoder pass and two decoder passes. 
 
 When measuring inference speed, use this evaluation forward pass and report the input resolution, batch size, device, precision, and timing procedure. Exclude model construction, data loading, host-to-device transfer, post-processing, metric computation, and file I/O from forward-only timing.
 
-## Reproducibility
-
-| Task | Script / setting |
-| --- | --- |
-| Semi-supervised training | `python train.py` |
-| Single-seed training | `python train.py --seeds 42` |
-| Checkpoint evaluation | `python Predict.py --checkpoint ... --image-path ... --mask-path ...` |
-| Multi-seed evaluation | `python train.py --test-only --checkpoint-dir ... --image-path ... --mask-path ... --seeds 42 43 44` |
-| Labeled training fraction | `unlabeled_ratio` in `train.py` |
-| Dataset partition seed | `split_seed` in `train.py` |
-| Training seeds | `train_seeds` in `train.py` |
-| Segmentation metrics | `metric/segmentation_metrics.py` |
-| Weak/strong augmentation | `SkinDataAugmentor.py` |
-| DDV, FRG, and RRS | `semi/ddv.py`, `semi/frg.py`, and `semi/rrs.py` |
-
-Match the dataset partitions, labeled fraction, normalization, image size, channel widths, training epochs, and evaluation settings to the experiment being reproduced. The values in `train.py` are the current repository defaults.
-
 ## Checkpoints and Logs
 
 With the default `results_root`, a training run produces:
