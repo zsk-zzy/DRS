@@ -1,0 +1,16 @@
+# DRS direct runtime dependencies.
+# Python >=3.11; versions validated with Python 3.12 and CUDA 12.8.
+# Install the matching CPU/CUDA torch and torchvision wheels first (see README).
+# CUDA build suffixes and package indexes are intentionally platform-independent here.
+# Install with: python -m pip install -r requirements.txt
+
+# Network, automatic mixed precision, and image augmentation
+torch==2.11.0
+torchvision==0.26.0
+
+# Image/mask processing and numerical operations (Pillow provides PIL)
+numpy==2.4.2
+Pillow==12.1.0
+
+# Training curves and prediction visualizations
+matplotlib==3.10.3
